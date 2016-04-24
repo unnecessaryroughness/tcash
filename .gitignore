@@ -1,2 +1,4 @@
 common/tcash-db.inc.php
 common/classes/database.php
+common/classes/backup_db_files
+logs/
