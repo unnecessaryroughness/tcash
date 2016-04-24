@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Calendar Test Harness</title>  
+
+        <!--MOVE these styles to the main styles file-->
+        
+        <style>
+            * { 
+                box-sizing: border-box; 
+                font: normal 1em verdana, sans-serif; 
+            }
+            
+            .tblCalendar { 
+                border: 1px solid #444; 
+                border-radius: 5px; 
+                box-shadow: 5px 5px 5px #aaa;
+            }
+            
+            .thCalHeader { 
+                background: #444; 
+                color: #eee; 
+                height: 2em; 
+                width: 2em; 
+                font-weight: bold; 
+            }
+            
+            .tdCalDay { 
+                background: #eee; 
+                color: #444; 
+                height: 2em; 
+                width: 2em; 
+                text-align: center; 
+            }
+            
+            .tdCalToday { 
+                background: #ccf; 
+                color: #008; 
+                height: 2em; 
+                width: 2em; 
+                text-align: center; 
+                border: 3px solid #008; 
+                border-radius: 10px; 
+                font-weight: bold; 
+            }
+            
+            .tdCalSelected  { 
+                background: #bbb; 
+                color: #444; 
+                height: 2em; 
+                width: 2em; 
+                text-align: center; 
+            }
+            
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <div id="divCalendar">
+        
+            <table class="tblCalendar">
+                <tr>
+                    <th class="thCalHeader" id="thMonthPrev"><</th>
+                    <th class="thCalHeader" colspan="5" id="thMonthName">Month</th>
+                    <th class="thCalHeader" id="thMonthNext">></th>
+                </tr>
+                <tr>
+                    <th class="thCalHeader">S</th>
+                    <th class="thCalHeader">M</th>
+                    <th class="thCalHeader">T</th>
+                    <th class="thCalHeader">W</th>
+                    <th class="thCalHeader">T</th>
+                    <th class="thCalHeader">F</th>
+                    <th class="thCalHeader">S</th>
+                </tr>
+                <tr>
+                    <td class="tdCalDay" id="c1-0"></td>
+                    <td class="tdCalDay" id="c1-1"></td>
+                    <td class="tdCalDay" id="c1-2"></td>
+                    <td class="tdCalDay" id="c1-3"></td>
+                    <td class="tdCalDay" id="c1-4"></td>
+                    <td class="tdCalDay" id="c1-5"></td>
+                    <td class="tdCalDay" id="c1-6"></td>
+                </tr>
+                <tr>
+                    <td class="tdCalDay" id="c2-0"></td>
+                    <td class="tdCalDay" id="c2-1"></td>
+                    <td class="tdCalDay" id="c2-2"></td>
+                    <td class="tdCalDay" id="c2-3"></td>
+                    <td class="tdCalDay" id="c2-4"></td>
+                    <td class="tdCalDay" id="c2-5"></td>
+                    <td class="tdCalDay" id="c2-6"></td>
+                </tr>
+                <tr>
+                    <td class="tdCalDay" id="c3-0"></td>
+                    <td class="tdCalDay" id="c3-1"></td>
+                    <td class="tdCalDay" id="c3-2"></td>
+                    <td class="tdCalDay" id="c3-3"></td>
+                    <td class="tdCalDay" id="c3-4"></td>
+                    <td class="tdCalDay" id="c3-5"></td>
+                    <td class="tdCalDay" id="c3-6"></td>
+                </tr>
+                <tr>
+                    <td class="tdCalDay" id="c4-0"></td>
+                    <td class="tdCalDay" id="c4-1"></td>
+                    <td class="tdCalDay" id="c4-2"></td>
+                    <td class="tdCalDay" id="c4-3"></td>
+                    <td class="tdCalDay" id="c4-4"></td>
+                    <td class="tdCalDay" id="c4-5"></td>
+                    <td class="tdCalDay" id="c4-6"></td>
+                </tr>
+                <tr>
+                    <td class="tdCalDay" id="c5-0"></td>
+                    <td class="tdCalDay" id="c5-1"></td>
+                    <td class="tdCalDay" id="c5-2"></td>
+                    <td class="tdCalDay" id="c5-3"></td>
+                    <td class="tdCalDay" id="c5-4"></td>
+                    <td class="tdCalDay" id="c5-5"></td>
+                    <td class="tdCalDay" id="c5-6"></td>
+                </tr>
+                <tr>
+                    <td class="tdCalDay" id="c6-0"></td>
+                    <td class="tdCalDay" id="c6-1"></td>
+                    <td class="tdCalDay" id="c6-2"></td>
+                    <td class="tdCalDay" id="c6-3"></td>
+                    <td class="tdCalDay" id="c6-4"></td>
+                    <td class="tdCalDay" id="c6-5"></td>
+                    <td class="tdCalDay" id="c6-6"></td>
+                </tr>
+            </table>
+            <div id=hiddenFields>
+                <input type="hidden" name="txtCalDate" id="txtCalDate">
+                <input type="hidden" name="txtLastDate" id="txtLastDate">
+            </div>
+        </div>
+    
+    </body>
+
+
+    <!--Move this section to an independent javascript file to support the calendar -->
+    
+    <script language="javascript">
+    
+        //IMMEDIATE SCRIPT
+        var m = new Calendar();
+        m.populateCalendar(2014, 11);
+
+        //ATTACH EVENTS
+        document.getElementById("thMonthPrev").addEventListener("click", function() {
+            m.populatePrevious();
+        });
+
+        document.getElementById("thMonthNext").addEventListener("click", function() {
+            m.populateNext();
+        });
+        
+        
+        
+        
+        //CLASS DEFINITION
+        function Calendar () {
+                       
+            this.monthlist = ["January", "February", "March", "April", "May", "June", "July",
+                              "August", "September", "October", "November", "December"];
+            
+            
+            this.populatePrevious = function() {
+                if (this.month -1 >= 0) {
+                    this.month -= 1; 
+                } else {
+                    this.month = 11; 
+                    this.year -= 1;
+                }
+                this.populateCalendar(this.year, this.month);
+            }
+
+            this.populateNext = function() {
+                if (this.month +1 <= 11) {
+                    this.month += 1; 
+                } else {
+                    this.month = 0; 
+                    this.year += 1;
+                }
+                this.populateCalendar(this.year, this.month);
+            }
+            
+            this.populateCalendar = function(year, month) {
+
+                this.month = month;
+                this.year = year;
+                this.today = new Date();
+                this.today.setHours(0, 0, 0, 0);
+                this.displayMonth = this.monthlist[this.month] + " " + this.year;
+
+                var date = new Date();
+                date.setFullYear(this.year, this.month-1, 1);
+                var day = date.getDay();
+
+                this.firstDOM = date.getDay();
+
+                switch (this.month) {
+                        case 3:
+                        case 5:
+                        case 8:
+                        case 10:
+                            this.lastDOM = 30;
+                        break;
+
+                        case 1:
+                            this.lastDOM = 28;
+                        break;
+
+                        default: 
+                            this.lastDOM = 31;
+                        break;
+                }
+
+                document.getElementById("thMonthName").innerHTML = m.displayMonth;
+
+                var cellVal = "";
+                var currDate = 0;
+                
+                for (r=1; r<=6; r++) {
+                    for (c=0; c<=6  ; c++) {
+                        
+                        if (r == 1) {
+                            
+                            if (c < this.firstDOM) {
+                                cellVal = "";
+                            } else {
+                                currDate += 1;
+                                cellVal = currDate;
+                            }
+                            
+                        } else {
+                            currDate += 1;
+                            if (currDate <= this.lastDOM) {
+                                cellVal = currDate;
+                            } else {
+                               cellVal = ""; 
+                            }
+                        }
+                        
+                        var dCell = new Date();
+                        dCell.setFullYear(this.year, this.month, currDate);
+                        dCell.setHours(0, 0, 0, 0);
+                        
+                        var sDay = dCell.getDate();
+                        
+                        var currCell = document.getElementById("c" + r + "-" + c);
+                        currCell.innerHTML = cellVal;
+  
+                        currCell.addEventListener("click", function() {
+                            
+                            if (this.innerHTML != "") {
+                                var oLastCell = document.getElementById(
+                                    document.getElementById("txtLastDate").value);
+
+                                if (oLastCell != null) {
+                                    if (oLastCell.className != "tdCalToday") {
+                                        oLastCell.className = "tdCalDay";
+                                    }
+                                }
+                                
+                                var oChosenCell = document.getElementById("txtCalDate")
+                                oChosenCell.value = m.year + "-" + 
+                                    ("00" + (m.month+1)).slice(-2) + "-" +
+                                    ("00" + this.innerHTML).slice(-2);
+
+                                document.getElementById("txtLastDate").value = this.id;
+
+                                if (this.className != "tdCalToday") {
+                                    this.className = "tdCalSelected";
+                                }
+                            }
+                        });
+                        
+                        if (+dCell == +this.today) {
+                            currCell.className = "tdCalToday"; 
+                        } else {
+                           currCell.className = "tdCalDay"; 
+                        }
+                            
+                    }
+                }
+            };
+            
+            
+        }
+    
+    
+    </script>
+    
+</html>

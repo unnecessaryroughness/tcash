@@ -1,0 +1,750 @@
+
+/* 
+    ==========================================
+    Layout 1 - IPHONE SIZE LAYOUTS (DEFAULT)
+
+    ==========================================
+*/
+
+article {
+	background: #DDDDDD;
+	padding: 0.5em; 1em;
+	margin-bottom: 0.2em;
+	font: bold 20px verdana, sans-serif;
+}	
+
+
+article header {	
+    color: #000;
+	margin: 0em 0em 0.5em 0em;
+	padding-left: 0.0em;
+	width: 15em;
+	font: bold 0.7em verdana, sans-serif;
+}
+
+.layoutcol1 article header a {
+    color: #000;
+}
+
+article p {
+	border: 0px solid #000000;
+	font: normal 14px verdana, sans-serif;
+}
+
+
+article footer {
+	background: #EEFFEE;		
+	border: 1px solid #CCDDCC;	
+	float: right;
+	width: 6em;	
+	text-align: center;
+	margin: 0px 0px 5px 0px;
+	border-radius: 5px;
+	font: bold 16px courier, sans-serif;
+}
+
+
+.twocoltable {
+    background: #fff;
+    overflow: hidden;
+}
+
+.twocoltable-col1 {
+    float: left;
+    width: 50%;
+}
+
+.twocoltable-col2 {
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+
+.selectdropdown {
+    font-weight: bold;
+    width: 10em;
+}
+
+
+.layoutcol1 { 
+	background: #FFFFFF;
+	border: 0px solid #444444;
+	margin-bottom: 1em; 
+}
+
+.layoutcol2 {
+	background: #FFFFFF;
+	border: 0px solid #444444;
+	margin-bottom: 1em; 
+}
+
+.layoutcol50pc {
+    margin-bottom: 3em;
+}
+
+.accounttype {
+	background: #018301;
+	color: #FFFFFF;	
+	font-weight: bold;
+	padding: 0.3em 1em;
+	margin: 1em 0em 0.2em 0em;
+}
+
+article p#balancebox1 {
+	float: left;
+	width: 60%;
+	margin-right: 1%;
+}
+
+article p#balancebox2 {
+	float: left;
+	width: 38%;
+	font: bold 0.9em verdana, sans-serif;
+	text-align: right;
+	margin-right: 1%;
+}
+
+.layoutcol2 .balancecalendar {
+    display: none;
+    padding: 0 3em;
+}
+
+.layoutcol2 .cashpermonth {
+    margin: 2em 0 0 3em;
+}
+
+.layoutcol2 .cashpermonth p {
+    font-weight: bold;
+    color: #444;
+}
+
+.layoutcol2 .cashpermonth p span {
+    font-weight: normal;
+}
+
+article.actionbox {
+	background: #999999;
+}
+
+article p.actionbox {
+	font: bold 18px verdana, sans-serif;
+	color: #FFFFFF;
+}
+
+/* REGISTER STYLES */
+
+article.register {
+	margin: 0;
+	border: 1px solid #BBBBBB;
+	box-shadow: rgba(150, 150, 150, 0.7) 5px 5px 10px;
+	padding: 0.3em; 1em;
+	font: normal 0.9em verdana, sans-serif;
+}
+
+article.register:nth-child(even) {
+	background: #FFFFFF;
+}
+
+article.register:nth-child(odd) {
+	background: #EEEEEE;
+}
+
+article.unreconciled, a.unreconciled {
+	color: #84020d;
+}
+
+article.placeholder, a.placeholder {
+    color: #1c1cdd;       
+    font-weight: normal;
+    font-style: normal;
+}
+
+article.futuredated, a.futuredated {
+	color: #777;
+    font-style: italic;
+}
+
+article.register.today {
+    //background: #b6b6f2; 
+    border-top: 3px solid #00b;
+}
+
+
+article span#register-col1 {
+	float: left;
+	width: 74%;
+	margin-right: 2%;
+} 
+
+article span#register-col2 {
+	float: left;
+	width: 24%;
+} 
+
+span{
+	border: 0px solid #000000;
+}
+
+
+/* register data item classes */
+
+h2.accountsummary {
+    padding: 0 0.3em;  
+}
+
+h2.register-todaysbalance {
+    font-weight: bold; 
+    padding: 0 0.1em;
+}
+
+span.register-date {
+	float: left;
+	width: 40%;
+	margin-right: 2%;
+}
+
+span.register-payee {
+	float: left;
+	width: 56%;	
+	margin-left: 2%;
+	margin-right: 0%;
+}
+
+span.register-category {
+	float: left;
+	width: 100%;
+}
+
+span.register-amountcr {
+	float: right;
+	text-align: right;
+	width: 100%;
+	margin-left: 2%;
+}
+
+span.register-displaydr {
+	display: none;	
+}
+
+span.register-displaycr {
+	display: none;
+}
+
+span.register-category-w {
+	display: none;
+}
+
+span.register-balance {
+	float: right;
+	width: 100%;
+	text-align: right;
+	font-weight: bold;
+}
+
+
+/* ADD/EDIT INPUT STYLES */
+
+.editlabel { margin: 0.3em 0; padding: 0; height: 100%;}
+.editlabel label { display: inline-block; height: 50%; margin-top: 0.5em; }
+.trailinglabel { display: inline-block; height: 50%; padding: 0.5em;}
+
+.editinput { margin-bottom: 1em; border-radius: 0;}
+.editinput select {	height: 2.5em; width: 99%; }
+.editinput select.date { width: 25%; }
+.editinput select.narrow { float:left; width: 75%; margin: 0 0.2em 1em 0;}
+
+.editinput button { 
+    width: 48%;	
+    height: 2.5em; 
+    background: #ccc; 
+    margin-right: 2%; 
+}
+.editinput button.last { 
+    margin-right: 0%; 
+}
+.editinput button.narrow { 
+    float:left; 
+    width: 20%; 
+    margin: 0; 
+}
+
+.editinput .button-cancel {
+    background: #fff;
+    color: 000;
+    width: 7em;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+.editinput .button-submit {
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+
+.editinput textarea { width: 99%; height: 4em; }
+.editinput .textfield { height: 1.5em; font-size: 1.2em; } 
+.editinput .amtfield { width: 9em; height: 1.9em;}
+.editinput .narrowfield { width: 4em; height: 1.9em;}
+.editinput .mediumwidthfield { width: 6em; height: 1.9em;}
+.editinput .maxwidthfield { width: 100%; height: 1.9em;}
+
+.rdoInput { margin: 0.6em 0; margin-right: 5px;}
+.fldInput { padding: 0.5em; max-width: 20em; border-radius: 0px;}
+
+.editinput select#txfaccount { display: none; }
+.registererror {
+    color: #c00; 
+    text-align: left;
+}
+
+
+/* REPEATING TRANSACTION STYLES */
+
+.repeatList { 
+    padding: 0.5em; 
+    max-width: 50em;
+    margin: 0 0;
+}
+
+.repeatList article {
+    clear: both;
+    overflow: hidden;
+    max-width: 50em;
+}
+
+.repeatTxnCol1 { 
+    display: block;
+    font: normal .7em verdana, sans-serif;
+}
+
+.repeatTxnCol2 { 
+    display: block;
+    font: normal .7em verdana, sans-serif;
+    text-align: right;
+}
+
+#rpt_AccountId {
+    font: normal 1em verdana, sans-serif;
+    background: #018301;
+    color: #fff;
+    padding: 0.2em;
+}
+
+#rpt_Apply {
+    font: bold 0.8em verdana, sans-serif;
+}
+
+#rpt_Amount {
+    font: bold 1.2em verdana, sans-serif;
+}
+
+#rpt_Payee {
+    font: bold 1em verdana, sans-serif;
+    margin: 0.2em 0 0.2em 0;
+}
+
+#rpt_FrequencyIncrement {
+    font-weight: bold;
+}
+
+
+/* NEXTCARD Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+.nextfieldset {
+    width: 20em;
+    margin: 0 auto 1em auto;
+    border: 2px solid #888;
+    border-radius: 0px;
+    padding: 0 10px;
+}
+
+.nextborder {
+    background: #ddd;
+    border-radius: 0px;
+    overflow: hidden;
+    width: 20em;
+    margin: 0 auto 10px auto;
+    text-align: center;
+}
+
+.nextheading {
+    background: #024002;
+    padding: 0.3em 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff;
+}
+
+.nextinputgroup {
+    width: 50%;
+    margin: 1em auto;
+}
+
+.nextinputgroupwide {
+    width: 90%;
+    margin: 1em auto;
+}
+
+.nextfield:invalid {
+    background: #fbb;
+}
+
+.nexttextarea {
+    width: 100%;
+    height: 6em;
+    overflow-y: scroll;
+    word-wrap: normal;
+}
+
+.nextfield {
+    height: 1.5em; 
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: right;
+    padding: 0 3px;
+}
+
+.nextbutton {
+    width: 100%;	
+    height: 2.5em; 
+    background: #ccc; 
+    border-radius: 0px; 
+    margin-right: 2%; 
+}
+
+.nextlabel {
+    display: block;
+    margin: 0.3em 0 0.3em 0;
+}
+
+
+/* USER MANAGEMENT Styles */
+
+#registerbox {
+    overflow: hidden;
+}
+
+#login-register-title {
+    display: block;
+    width: 98%;
+    height: 1.7em;
+    line-height: 1.7em;
+    background: #ccc;
+    font-size: 1em;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+.userlabel {
+    display:block;
+    border-bottom: 2px solid #444;
+    margin-bottom: 0.5em;
+    margin-top: 0.75em;
+    font-weight: bold;
+    color: #444;
+}
+
+.usereditinput { margin-bottom: 0; border-radius: 0; }
+
+
+
+/* REPORTING Styles */
+.fieldset-report {
+    width: 100%;
+    padding: 0.5em 1em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+}
+
+.fieldset-legend-report {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0 0.5em;
+}
+
+.li-report {
+    list-style: none;  
+    margin-bottom: 0.5em;
+}
+
+.checkbox-report {
+    display: inline-block;
+    
+}
+
+.label-report {
+    display: inline-block;
+}
+
+.label-report-red {
+    display: inline-block;
+    color: #900;
+}
+
+.listbox-report {
+    width: 100%;
+    height: 1.5em;
+}
+
+.datebox-report {
+    width: 10em;  
+}
+
+.button-report {
+    display: block;
+    width: 10em;
+}
+
+.report-result-rightalign {
+    text-align: right;  
+}
+
+.report-total {
+    font-weight: bold;
+}
+
+
+/* 
+    =====================================================
+    layout 2: 500px - iPhone Landscape Width
+
+             - adjust the % splits of balance boxes
+    =====================================================
+*/
+
+@media (min-width: 500px)
+{
+	//body { background: teal; }
+
+	article p#balancebox1 {
+		width: 75%;
+    }
+
+	article p#balancebox2 {
+		width: 23%;
+	}
+
+    .layoutcol2 .balancecalendar {
+        display: block;
+        padding: 0 3em;
+    }
+
+	article span#register-col1 {
+		float: left;
+		width: 50%;
+		margin-right: 2%;
+	} 
+
+	article span#register-col2 {
+		float: left;
+		width: 48%;
+	} 
+	
+	span.register-amountcr {
+		display: none;	
+	}
+
+	span.register-displaydr {
+		display: inline;		
+		float: left;
+		text-align: right;
+		width: 32%;
+		margin-right: 2%;
+		color: #FF0000;
+		background: #FFCCCC;
+	}
+
+	span.register-displaycr {
+		display: inline;
+		float: right;
+		text-align: right;
+		width: 32%;
+		margin-right: 2%;
+		color: #009900;
+		background: #CCFFCC;
+	}
+
+	span.register-balance {
+		float: right;
+		width: 33%;
+		text-align: right;
+		font-weight: bold;
+	}
+
+	
+	.editlabel { 
+        height: 100%; 
+        margin: 0 2% 0 0; 
+        padding: 0; 
+        float: left; 
+        width: 30%; 
+        text-align: right; 
+    }
+    
+	.editinput { 
+        height: 100%; 
+        float: left; 
+        width: 68%; 
+        padding: 0; 
+        margin: 0 0 .5em 0; 
+    }
+
+    .editinput select { width: 21.3em; }
+		.editinput select.date { width: 5em; }
+        .editinput select.narrow { width: 16.5em; margin: 0;}
+		.editinput button {	width: 11em; margin-right: 0; }
+        .editinput button.narrow { width: 4.8em; }
+		.editinput textarea { width: 21.8em; height: 3em; }
+        .narrowfield { width: 4em; } 
+
+	.usereditinput { 
+        height: 100%; 
+        float: left; 
+        width: 68%; 
+        padding: 0; 
+        margin: 0 0 0 0; 
+    }
+    
+}
+
+/* 
+    =====================================================
+    layout 2: 660px - iPad portrait 
+
+                - make column 2 float up to the right
+    =====================================================
+*/
+
+@media (min-width: 660px)
+{
+    * {
+        box-sizing: border-box;
+    }
+    
+	//body { background: lime; }
+
+	.layoutcol1 {
+        float: left;
+        width: 70%;
+        margin: 0;
+	}
+
+    .layoutcol2 {
+        float: left;
+        width: 30%;
+        margin: 0;
+	}
+
+  
+	article span#register-col1 {
+		float: left;
+		width: 65%;
+		margin-right: 2%;
+	} 
+
+	article span#register-col2 {
+		float: left;
+		width: 33%;
+	} 
+
+	span.register-date { width: 15%; margin-right: 2%; }
+	span.register-payee { width: 38%; margin-right: 2%;	margin-left: 2%; }
+	span.register-category { width: 41%; }
+
+	span.register-displaydr { width: 31%; float: left; margin-right: 2%; } 
+	span.register-displaycr { width: 31%; float: right; margin-right: 2%}
+	span.register-balance   { width: 34%; float: right;}
+
+
+	.editlabel { width: 25%; }	
+	.editinput { width: 63%; }
+
+    .layoutcol1 .editlabel, .layoutcol2 .editlabel { width: 15%; min-width: 6em; }
+    
+    .repeatTxnCol1, .repeatTxnCol2 { float: left; width: 50%;}
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .nextfieldset {
+        margin: 0 0 1em 0 
+    }
+    
+    .nextborder {
+        float: left;
+        margin-right: 1em;
+    }
+
+    .fieldset-report {
+        width: 30em;
+        float: left;
+    }
+    
+    .listbox-report {
+        height: 17.3em;
+    }
+
+}
+
+
+/* 
+    =====================================================
+    layout 3: 850px - iPad landscape and above		
+
+                - make input fields rise up into two cols
+    =====================================================
+*/
+
+@media (min-width: 900px)
+{
+
+    * {
+        box-sizing: border-box;
+    }
+  
+    //body { background: yellow; }
+
+	article span#register-col1 {
+		float: left;
+		width: 73%;
+		margin-right: 2%;
+	} 
+
+	article span#register-col2 {
+		float: left;
+		width: 25%;
+	} 
+
+    .layoutcol50pc {
+        float: left;
+        width: 50%;
+        margin: 0;
+    }
+    
+      
+	span.register-date { width: 15%; margin-right: 2%; }
+	span.register-payee { width: 38%; margin-right: 2%;	margin-left: 2%; }
+	span.register-category { width: 41%; }
+
+	span.register-displaydr { width: 31%; float: left; margin-right: 2%; } 
+	span.register-displaycr { width: 31%; float: right; margin-right: 2%}
+	span.register-balance   { width: 34%; float: right;}
+
+    #inputcol1, #inputcol2 { 
+        width: 50%;
+        float: left; 
+    }
+         
+	.editlabel { width: 30%; }	
+	.editinput { width: 68%; }
+}
+
+

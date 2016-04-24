@@ -1,0 +1,44 @@
+.divCalendar { 
+    box-sizing: border-box; 
+    font: normal 12px verdana, sans-serif; 
+    padding: 0px;
+}
+
+.tblCalendar { 
+    border: 1px solid #444; 
+    border-radius: 5px; 
+    box-shadow: 5px 5px 5px #aaa;
+}
+
+.tCell {  
+    height: 23px; 
+    width: 28px; 
+    text-align: center;
+    padding: 2px;
+}
+
+.thCalHeader { 
+    background: #444; 
+    color: #eee; 
+    font-weight: bold; 
+}
+
+.tdCalDay { 
+    background: #eee; 
+    color: #444; 
+}
+
+.tdCalToday { 
+    background: #ccf; 
+    color: #008; 
+    border: 2px solid #008; 
+    border-radius: 15px; 
+    font-weight: bold; 
+    padding: 0px;
+}
+
+.tdCalSelected  { 
+    background: #bbb; 
+    color: #444; 
+}
+
